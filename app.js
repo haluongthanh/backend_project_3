@@ -9,7 +9,7 @@ const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors({
-    origin: ['http://localhost:3000', '*'],
+    origin: ['http://localhost:3000','https://frontend-project-3-gubt.vercel.app', '*'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
