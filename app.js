@@ -8,16 +8,21 @@ const errorMiddleware = require('./middleware/error');
 const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
 
+// app.use(cors({
+//     origin: function (origin, callback) {
+//         // Allow requests from http://localhost:3000 and https://frontend-project-3-gubt.vercel.app
+//         if (['http://localhost:3000', 'https://frontend-project-3-gubt.vercel.app'].includes(origin)) {
+//             callback(null, true);
+//         } else {
+//             // Block all other requests
+//             callback(new Error('Not allowed by CORS'));
+//         }
+//     },
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     credentials: true
+// }));
 app.use(cors({
-    origin: function (origin, callback) {
-        // Allow requests from http://localhost:3000 and https://frontend-project-3-gubt.vercel.app
-        if (['http://localhost:3000', 'https://frontend-project-3-gubt.vercel.app'].includes(origin)) {
-            callback(null, true);
-        } else {
-            // Block all other requests
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
