@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({
     origin: function (origin, callback) {
         // Allow requests from http://localhost:3000 and https://frontend-project-3-gubt.vercel.app
-        if (['http://localhost:3000', 'https://frontend-project-3-gubt-8bhe0jhxr-thanhfs-projects.vercel.app'].includes(origin)) {
+        if (['http://localhost:3000', 'https://frontend-project-3-gubt.vercel.app/'].includes(origin)) {
             callback(null, true);
         } else {
             // Block all other requests
